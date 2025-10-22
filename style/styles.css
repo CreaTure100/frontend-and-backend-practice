@@ -206,25 +206,38 @@ body {
     color: #667eea; /* Синий цвет для метаданных */ 
 } 
 
+.products-container {
+    display: flex; /* Использование flexbox для горизонтального расположения */
+    flex-direction: row; /* Расположение элементов в строку */
+    justify-content: space-between; /* Равномерное распределение по ширине */
+    gap: 20px; /* Расстояние между карточками товаров */
+    flex-wrap: wrap; /* Позволяет переносить элементы на новую строку, если не хватает места */
+}
+
 /* ===== СТИЛИ ДЛЯ СТРАНИЦЫ ТОВАРОВ ===== */
-.product-card { 
-    background: white; /* Белый фон карточки товара */ 
-    padding: 20px; /* Внутренние отступы */ 
-    margin: 20px 0; /* Вертикальные отступы */ 
-    border-radius: 12px; /* Скругленные углы */ 
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */ 
-    text-align: center; /* Выравнивание по центру */ 
-    transition: transform 0.3s ease; /* Плавная анимация */ 
-} 
+.product-card {
+    background: white; /* Белый фон карточки товара */
+    padding: 20px; /* Внутренние отступы */
+    border-radius: 12px; /* Скругленные углы */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Легкая тень */
+    text-align: center; /* Выравнивание по центру */
+    transition: transform 0.3s ease; /* Плавная анимация */
+    flex: 1; /* Гибкое распределение пространства */
+    min-width: 200px; /* Минимальная ширина карточки */
+    max-width: 300px; /* Максимальная ширина карточки */
+    margin: 10px; /* Внешние отступы */
+}
 
 .product-card:hover { 
     transform: translateY(-5px); /* Поднятие при наведении */ 
 } 
 
-.product-card img { 
-    border-radius: 8px; /* Скругленные углы изображения */ 
-    margin-bottom: 15px; /* Отступ снизу */ 
-} 
+.product-card img {
+    border-radius: 8px; /* Скругленные углы изображения */
+    margin-bottom: 15px; /* Отступ снизу */
+    max-width: 100%; /* Ограничение ширины изображения */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
+}
 
 .product-card h3 { 
     color: #2c3e50; /* Темно-синий цвет названия товара */ 
