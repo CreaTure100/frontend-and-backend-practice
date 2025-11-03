@@ -8,39 +8,76 @@
 </head>
 <body>
     <div class="page-container">
-        <div class="header">Добро пожаловать на мой сайт</div>
-        <div class="nav">
+        <header class="header">
+            <h1>Добро пожаловать на мой сайт</h1>
+        </header>
+
+        <nav class="nav">
             <ul class="nav-list">
                 <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
                 <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
                 <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html" aria-current="page">Товары</a></li>
                 <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
             </ul>
-        </div>
-        <div class="content">
+        </nav>
+
+        <main class="content">
             <h1>Каталог товаров</h1>
             <div class="products-container">
-                <div class="product-card">
-                    <img src="../images/goods1.webp" alt="Товар 1" width="150">
-                    <h3>Умный товар</h3>
-                    <p>Цена: 5 990 ₽</p>
-                </div>
+                <article class="product-card">
+                    <img src="../images/Mini_P.E.K.K.A.webp" alt="минипекка">
+                    <h3>Mini P.E.K.K.A</h3>
+                    <p class="product-price" aria-label="Цена: 3 эликсира">
+                    Цена: 3 <span class="elixir-icon" aria-hidden="true"></span>
+                    </p>
+                </article>
 
-                <div class="product-card">
-                    <img src="../images/goods2.webp" alt="Товар 2" width="150">
-                    <h3>Более умный товар</h3>
-                    <p>Цена: 3 499 ₽</p>
-                </div>
+                <article class="product-card">
+                    <img src="../images/Magic_archer.webp" alt="магический лучник">
+                    <h3>Magic archer</h3>
+                    <p class="product-price" aria-label="Цена: 4 эликсира">
+                        Цена: 4 <span class="elixir-icon" aria-hidden="true"></span>
+                    </p>
+                </article>
 
-                <div class="product-card">
-                    <img src="../images/goods3.webp" alt="Товар 3" width="150">
-                    <h3>Умнейший товар</h3>
-                    <p>Цена: 2 299 ₽</p>
-                </div>
+                <article class="product-card">
+                    <img src="../images/Swordman.webp" alt="мечник">
+                    <h3>Swordman</h3>
+                    <p class="product-price" aria-label="Цена: 3 эликсира">
+                        Цена: 3 <span class="elixir-icon" aria-hidden="true"></span>
+                    </p>
+                </article>
+
+                                <article class="product-card">
+                    <img src="../images/bandit.png" alt="бандитка">
+                    <h3>Bandit</h3>
+                    <p class="product-price" aria-label="Цена: 4 эликсира">
+                        Цена: 4 <span class="elixir-icon" aria-hidden="true"></span>
+                    </p>
+                </article>
+
+                                <article class="product-card">
+                    <img src="../images/battle_boxer.png" alt="боевой боксер">
+                    <h3>Battle Boxer</h3>
+                    <p class="product-price" aria-label="Цена: 5 эликсира">
+                        Цена: 5 <span class="elixir-icon" aria-hidden="true"></span>
+                    </p>
+                </article>
+
+                                <article class="product-card">
+                    <img src="../images/royal_ghost.png" alt="королевский призрак">
+                    <h3>Royal Ghost</h3>
+                    <p class="product-price" aria-label="Цена: 4 эликсира">
+                        Цена: 4 <span class="elixir-icon" aria-hidden="true"></span>
+                    </p>
+                </article>
             </div>
-        </div>
-        <div class="footer">Все права защищены</div>
+        </main>
+
+        <footer class="footer">
+            <p>Все права защищены</p>
+        </footer>
     </div>
 </body>
 </html>
