@@ -1,83 +1,114 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Товары - Семестровая работа</title>
-    <link rel="stylesheet" href="../style/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Товары - Семестровая работа</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div class="page-container">
-        <header class="header">
-            <h1>Добро пожаловать на мой сайт</h1>
-        </header>
+  <div class="page">
+    <header class="header">
+      <h1 class="header__title">Добро пожаловать на мой сайт</h1>
+      <button class="theme-switch" type="button" aria-pressed="false" title="Переключить тему">
+        <span class="theme-switch__icon" aria-hidden="true">🌓</span>
+        <span class="sr-only">Переключить тему</span>
+      </button>
+    </header>
 
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html" aria-current="page">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+        <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+        <li class="nav__item nav__item--active"><a class="nav__link" href="goods.html" aria-current="page">Товары</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
 
-        <main class="content">
-            <h1>Каталог товаров</h1>
-            <div class="products-container">
-                <article class="product-card">
-                    <img src="../images/Mini_P.E.K.K.A.webp" alt="минипекка">
-                    <h3>Mini P.E.K.K.A</h3>
-                    <p class="product-price" aria-label="Цена: 3 эликсира">
-                    Цена: 3 <span class="elixir-icon" aria-hidden="true"></span>
-                    </p>
-                </article>
+    <main class="main">
+      <h1>Каталог товаров</h1>
 
-                <article class="product-card">
-                    <img src="../images/Magic_archer.webp" alt="магический лучник">
-                    <h3>Magic archer</h3>
-                    <p class="product-price" aria-label="Цена: 4 эликсира">
-                        Цена: 4 <span class="elixir-icon" aria-hidden="true"></span>
-                    </p>
-                </article>
+      <!-- множественный выбор по умолчанию; для одиночного поставьте data-selection="single" -->
+      <div class="products-container" data-selectable="cards" data-selection="multiple" role="listbox" aria-multiselectable="true">
+        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
+          <img class="card__image" src="../images/Mini_P.E.K.K.A.webp" alt="минипекка">
+          <h3 class="product-card__title card__title">Mini P.E.K.K.A</h3>
+          <p class="product-price card__price" aria-label="Цена: 3 эликсира">
+            <span class="card__price-new">3 <span class="elixir-icon" aria-hidden="true"></span></span>
+          </p>
+        </article>
 
-                <article class="product-card">
-                    <img src="../images/Swordman.webp" alt="мечник">
-                    <h3>Swordman</h3>
-                    <p class="product-price" aria-label="Цена: 3 эликсира">
-                        Цена: 3 <span class="elixir-icon" aria-hidden="true"></span>
-                    </p>
-                </article>
+        <!-- СО СКИДКОЙ -->
+        <article class="product-card card card--hoverable card--discount" role="option" tabindex="0" aria-selected="false">
+          <span class="card__badge" aria-label="Скидка">Скидка</span>
+          <img class="card__image" src="../images/Magic_archer.webp" alt="магический лучник">
+          <h3 class="product-card__title card__title">Magic archer</h3>
+          <p class="product-price card__price" aria-label="Цена: 4 эликсира, скидка с 5">
+            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
+            <span class="card__price-old" aria-hidden="true">5</span>
+          </p>
+        </article>
 
-                                <article class="product-card">
-                    <img src="../images/bandit.png" alt="бандитка">
-                    <h3>Bandit</h3>
-                    <p class="product-price" aria-label="Цена: 4 эликсира">
-                        Цена: 4 <span class="elixir-icon" aria-hidden="true"></span>
-                    </p>
-                </article>
+        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
+          <img class="card__image" src="../images/Swordman.webp" alt="мечник">
+          <h3 class="product-card__title card__title">Swordman</h3>
+          <p class="product-price card__price" aria-label="Цена: 3 эликсира">
+            <span class="card__price-new">3 <span class="elixir-icon" aria-hidden="true"></span></span>
+          </p>
+        </article>
 
-                                <article class="product-card">
-                    <img src="../images/battle_boxer.png" alt="боевой боксер">
-                    <h3>Battle Boxer</h3>
-                    <p class="product-price" aria-label="Цена: 5 эликсира">
-                        Цена: 5 <span class="elixir-icon" aria-hidden="true"></span>
-                    </p>
-                </article>
+        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
+          <img class="card__image" src="../images/Bowler.webp" alt="вышибала">
+          <h3 class="product-card__title card__title">Bowler</h3>
+          <p class="product-price card__price" aria-label="Цена: 3 эликсира">
+            <span class="card__price-new">3 <span class="elixir-icon" aria-hidden="true"></span></span>
+          </p>
+        </article>
 
-                                <article class="product-card">
-                    <img src="../images/royal_ghost.png" alt="королевский призрак">
-                    <h3>Royal Ghost</h3>
-                    <p class="product-price" aria-label="Цена: 4 эликсира">
-                        Цена: 4 <span class="elixir-icon" aria-hidden="true"></span>
-                    </p>
-                </article>
-            </div>
-        </main>
+        <!-- СО СКИДКОЙ -->
+        <article class="product-card card card--hoverable card--discount" role="option" tabindex="0" aria-selected="false">
+          <span class="card__badge" aria-label="Скидка">Скидка</span>
+          <img class="card__image" src="../images/bandit.png" alt="бандитка">
+          <h3 class="product-card__title card__title">Bandit</h3>
+          <p class="product-price card__price" aria-label="Цена: 4 эликсира, скидка с 5">
+            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
+            <span class="card__price-old" aria-hidden="true">5</span>
+          </p>
+        </article>
 
-        <footer class="footer">
-            <p>Все права защищены</p>
-        </footer>
-    </div>
+        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
+          <img class="card__image" src="../images/battle_boxer.png" alt="боевой боксер">
+          <h3 class="product-card__title card__title">Battle Boxer</h3>
+          <p class="product-price card__price" aria-label="Цена: 5 эликсира">
+            <span class="card__price-new">5 <span class="elixir-icon" aria-hidden="true"></span></span>
+          </p>
+        </article>
+
+        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
+          <img class="card__image" src="../images/royal_ghost.png" alt="королевский призрак">
+          <h3 class="product-card__title card__title">Royal Ghost</h3>
+          <p class="product-price card__price" aria-label="Цена: 4 эликсира">
+            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
+          </p>
+        </article>
+
+        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
+          <img class="card__image" src="../images/natureborn.png" alt="дриада">
+          <h3 class="product-card__title card__title">Natureborn</h3>
+          <p class="product-price card__price" aria-label="Цена: 4 эликсира">
+            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
+          </p>
+        </article>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__text">Все права защищены</p>
+    </footer>
+  </div>
+
+  <script src="../scripts/theme.js" defer></script>
+  <script src="../scripts/cards.js" defer></script>
 </body>
 </html>

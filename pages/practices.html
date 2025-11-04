@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Практики - Семестровая работа</title>
-    <link rel="stylesheet" href="../style/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практики - Семестровая работа</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div class="page-container">
-        <header class="header">
-            <h1>Добро пожаловать на мой сайт</h1>
-        </header>
+  <div class="page">
+    <header class="header">
+      <h1 class="header__title">Добро пожаловать на мой сайт</h1>
+      <button class="theme-switch" type="button" aria-pressed="false" title="Переключить тему">
+        <span class="theme-switch__icon" aria-hidden="true">🌓</span>
+        <span class="sr-only">Переключить тему</span>
+      </button>
+    </header>
 
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html" aria-current="page">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+        <li class="nav__item nav__item--active"><a class="nav__link" href="practices.html" aria-current="page">Практики</a></li>
+        <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+      </ul>
+    </nav>
 
-        <main class="content">
-            <h1>Практические занятия</h1>
+    <main class="main">
+      <h1>Практические занятия</h1>
 
-            <section class="practices-intro">
-                <p>Здесь собраны общие материалы и информация для удобной организации учебного процесса: объявления,
-                расписание, полезные ссылки и памятки. Раздел пополняется по мере необходимости.</p>
-            </section>
+      <section class="practices">
+        <div class="practices__intro">
+          <p>Здесь собраны общие материалы и информация для удобной организации учебного процесса: объявлен�[...]
+          расписание, полезные ссылки и памятки. Раздел пополняется по мере необходимости.</p>
+        </div>
 
-            <section class="practices-container">
-                <article class="practice-card">
-                    <h3>Объявления</h3>
-                    <p>Важные сообщения и уточнения по занятиям, изменениям времени встреч, формату работ и критериям
-                    оценки. Следите за обновлениями перед каждой неделей.</p>
-                    <button class="practice-button" type="button" title="Заглушка: переход отключён">Подробнее</button>
-                </article>
+        <div class="practices__grid">
+          <article class="practice-card">
+            <h3 class="practice-card__title">Объявления</h3>
+            <p class="practice-card__text">Важные сообщения и уточнения по занятиям, изменениям времени встреч, формату работ и критерия�[...]
+            оценки. Следите за обновлениями перед каждой неделей.</p>
+            <button class="practice-button" type="button" title="Заглушка: переход отключён">Подробнее</button>
+          </article>
 
-                <article class="practice-card">
-                    <h3>Расписание и дедлайны</h3>
-                    <p>Календарь предстоящих встреч, консультаций и сроков сдачи. Рекомендуется заранее планировать
-                    время на подготовку и самопроверку выполненных заданий.</p>
-                    <button class="practice-button" type="button" title="Заглушка: переход отключён">Открыть календарь</button>
-                </article>
+          <article class="practice-card">
+            <h3 class="practice-card__title">Расписание и дедлайны</h3>
+            <p class="practice-card__text">Календарь предстоящих встреч, консультаций и сроков сдачи. Рекомендуется заранее планировать
+            время на подготовку и самопроверку выполненных заданий.</p>
+            <button class="practice-button" type="button" title="Заглушка: переход отключён">Открыть календарь</button>
+          </article>
 
-                <article class="practice-card">
-                    <h3>Материалы и ссылки</h3>
-                    <p>Сборник вспомогательных материалов: методички, инструкции, примеры оформления, чек‑листы
-                    самопроверки и полезные ресурсы для самостоятельной работы.</p>
-                    <button class="practice-button" type="button" title="Заглушка: переход отключён">Посмотреть</button>
-                </article>
-            </section>
-        </main>
+          <article class="practice-card">
+            <h3 class="practice-card__title">Материалы и ссылки</h3>
+            <p class="practice-card__text">Сборник вспомогательных материалов: методички, инструкции, примеры оформления, чек‑листы
+            самопроверки и полезные ресурсы для самостоятельной работы.</p>
+            <button class="practice-button" type="button" title="Заглушка: переход отключён">Посмотреть</button>
+          </article>
+        </div>
+      </section>
+    </main>
 
-        <footer class="footer">
-            <p>Все права защищены</p>
-        </footer>
-    </div>
+    <footer class="footer">
+      <p class="footer__text">Все права защищены</p>
+    </footer>
+  </div>
+    <script src="../scripts/theme.js" defer></script>
 </body>
 </html>
