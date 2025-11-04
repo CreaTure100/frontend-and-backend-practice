@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ру" data-bs-theme="light">
+<html lang="ru" data-bs-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,6 +8,36 @@
     <!-- Bootstrap CSS + Icons -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <style>
+      .selectable-card{
+        cursor:pointer;
+        transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+      }
+      .selectable-card:hover{
+        transform:translateY(-4px);
+        box-shadow:var(--bs-box-shadow-lg);
+      }
+      .selectable-card:active{
+        transform:translateY(-1px);
+      }
+      .selectable-card:focus-visible{
+        outline:2px solid var(--bs-primary);
+        outline-offset:2px;
+      }
+      /* Выбрана пользователем */
+      .selectable-card.is-selected{
+        border-color:var(--bs-primary) !important;
+        box-shadow:0 0 0 .25rem rgba(var(--bs-primary-rgb), .35), var(--bs-box-shadow-lg);
+      }
+      /* Скидка: акцент на рамке */
+      .selectable-card.is-discount{
+        border-color:var(--bs-warning) !important;
+      }
+      .badge-discount{
+        display:inline-block;
+      }
+    </style>
   </head>
   <body class="bg-body-tertiary">
     <div class="container-fluid p-0">
@@ -54,10 +84,11 @@
 
       <!-- Main -->
       <main class="container my-4">
-        <div class="row g-4">
+        <!-- data-selection: multiple | single -->
+        <div class="row g-4" data-selectable="cards" data-selection="multiple" role="listbox" aria-multiselectable="true">
           <!-- Card 1 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm selectable-card border" role="option" tabindex="0" aria-selected="false">
               <img src="../images/Mini_P.E.K.K.A.webp" class="card-img-top" alt="Mini P.E.K.K.A" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Mini P.E.K.K.A</h5>
@@ -72,8 +103,8 @@
 
           <!-- Card 2 (discount) -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm position-relative">
-              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Скидка</span>
+            <div class="card h-100 shadow-sm selectable-card border border-2 is-discount" role="option" tabindex="0" aria-selected="false">
+              <span class="badge badge-discount bg-warning text-dark position-absolute top-0 end-0 m-2">Скидка</span>
               <img src="../images/Magic_archer.webp" class="card-img-top" alt="Magic archer" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Magic archer</h5>
@@ -89,7 +120,7 @@
 
           <!-- Card 3 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm selectable-card border" role="option" tabindex="0" aria-selected="false">
               <img src="../images/Swordman.webp" class="card-img-top" alt="Swordman" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Swordman</h5>
@@ -104,7 +135,7 @@
 
           <!-- Card 4 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm selectable-card border" role="option" tabindex="0" aria-selected="false">
               <img src="../images/Bowler.webp" class="card-img-top" alt="Bowler" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Bowler</h5>
@@ -119,8 +150,8 @@
 
           <!-- Card 5 (discount) -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm position-relative">
-              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Скидка</span>
+            <div class="card h-100 shadow-sm selectable-card border border-2 is-discount" role="option" tabindex="0" aria-selected="false">
+              <span class="badge badge-discount bg-warning text-dark position-absolute top-0 end-0 m-2">Скидка</span>
               <img src="../images/bandit.png" class="card-img-top" alt="Bandit" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Bandit</h5>
@@ -136,7 +167,7 @@
 
           <!-- Card 6 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm selectable-card border" role="option" tabindex="0" aria-selected="false">
               <img src="../images/battle_boxer.png" class="card-img-top" alt="Battle Boxer" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Battle Boxer</h5>
@@ -151,7 +182,7 @@
 
           <!-- Card 7 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm selectable-card border" role="option" tabindex="0" aria-selected="false">
               <img src="../images/royal_ghost.png" class="card-img-top" alt="Royal Ghost" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Royal Ghost</h5>
@@ -166,7 +197,7 @@
 
           <!-- Card 8 -->
           <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
-            <div class="card h-100 shadow-sm">
+            <div class="card h-100 shadow-sm selectable-card border" role="option" tabindex="0" aria-selected="false">
               <img src="../images/natureborn.png" class="card-img-top" alt="Natureborn" style="height:180px;object-fit:cover;">
               <div class="card-body d-flex flex-column">
                 <h5 class="card-title">Natureborn</h5>
@@ -200,7 +231,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Bootstrap theme toggle -->
+    <!-- Theme toggle (persists in localStorage) -->
     <script>
       (function () {
         const KEY = 'bs-theme';
@@ -219,6 +250,55 @@
           });
           btn.setAttribute('aria-pressed', String((saved || 'light') === 'dark'));
         }
+      })();
+    </script>
+
+    <!-- Card selection logic (multiple/single) -->
+    <script>
+      (function () {
+        const containers = document.querySelectorAll('[data-selectable="cards"]');
+        containers.forEach((box) => {
+          const single = (box.dataset.selection || 'multiple') === 'single';
+          box.setAttribute('role', 'listbox');
+          box.setAttribute('aria-multiselectable', String(!single));
+
+          const cards = box.querySelectorAll('.selectable-card');
+
+          const setSelected = (card, on) => {
+            card.classList.toggle('is-selected', on);
+            card.setAttribute('aria-selected', on ? 'true' : 'false');
+          };
+          const clearAll = () => cards.forEach((c) => setSelected(c, false));
+
+          cards.forEach((card) => {
+            card.setAttribute('role', 'option');
+            if (!card.hasAttribute('tabindex')) card.tabIndex = 0;
+
+            // init from class
+            setSelected(card, card.classList.contains('is-selected'));
+
+            const toggle = () => {
+              if (single) {
+                clearAll();
+                setSelected(card, true);
+              } else {
+                setSelected(card, !(card.getAttribute('aria-selected') === 'true'));
+              }
+            };
+
+            card.addEventListener('click', (e) => {
+              if (e.target.closest('a, button, input, select, textarea')) return;
+              toggle();
+            });
+
+            card.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggle();
+              }
+            });
+          });
+        });
       })();
     </script>
   </body>
