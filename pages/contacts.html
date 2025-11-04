@@ -1,268 +1,98 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты - Семестровая работа</title>
-    <link rel="stylesheet" href="../style/styles.css">
-
-    <style>
-        /* Стили для модального окна */
-        dialog::backdrop {
-            background: rgba(0, 0, 0, 0.6);
-            animation: fadeIn 0.3s ease;
-        }
-        dialog {
-            border: none;
-            border-radius: 12px;
-            padding: 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: slideIn 0.3s ease;
-            max-width: 500px;
-            width: 90vw;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-
-        .modal-header {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 12px 12px 0 0;
-            margin: 0;
-        }
-        .modal-header h2 {
-            margin: 0;
-            color: white;
-            font-size: 1.5rem;
-        }
-
-        .modal-content {
-            padding: 2rem;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: 2px solid #e9ecef;
-            border-radius: 6px;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-            box-sizing: border-box;
-        }
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .modal-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: flex-end;
-            margin-top: 2rem;
-        }
-
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-weight: 600;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-        .btn-secondary {
-            background: #f8f9fa;
-            color: #2c3e50;
-            border: 2px solid #e9ecef;
-        }
-        .btn-secondary:hover {
-            background: #e9ecef;
-        }
-
-        .required {
-            color: #e74c3c;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to   { opacity: 1; }
-        }
-        @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px) scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* Адаптивность */
-        @media (max-width: 600px) {
-            dialog {
-                margin: 1rem;
-                width: calc(100vw - 2rem);
-            }
-            .modal-actions {
-                flex-direction: column;
-            }
-            .btn {
-                width: 100%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты - Семестровая работа</title>
+  <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
-    <div class="page-container">
-        <header class="header">
-            <h1>Добро пожаловать на мой сайт</h1>
-        </header>
+  <div class="page">
+    <header class="header">
+      <h1 class="header__title">Добро пожаловать на мой сайт</h1>
+      <button class="theme-switch" type="button" aria-pressed="false" title="Переключить тему">
+        <span class="theme-switch__icon" aria-hidden="true">🌓</span>
+        <span class="sr-only">Переключить тему</span>
+      </button>
+    </header>
 
-        <nav class="nav" aria-label="Основная навигация">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html" aria-current="page">Контакты</a></li>
-            </ul>
-        </nav>
+    <nav class="nav" aria-label="Основная навигация">
+      <ul class="nav__list">
+        <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+        <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+        <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+        <li class="nav__item nav__item--active"><a class="nav__link" href="contacts.html" aria-current="page">Контакты</a></li>
+      </ul>
+    </nav>
 
-        <main class="content">
-            <h1>Контакты</h1>
+    <main class="main">
+      <h1>Контакты</h1>
 
-            <section class="contact-info" aria-labelledby="contacts-title">
-                <p><strong>Адрес электронной почты:</strong> <a href="mailto:shavrov@mirea.ru">shavrov@mirea.ru</a></p>
-                <p><strong>Адрес:</strong> г. Москва, ул. Парковая, д. 1</p>
-                <button class="contact-button" type="button" onclick="document.getElementById('contactModal').showModal()">
-                    Связаться с нами
-                </button>
-            </section>
-        </main>
+      <section class="contact-info" aria-labelledby="contacts-title">
+        <p><strong>Адрес электронной почты:</strong> <a href="mailto:shavrov@mirea.ru">shavrov@mirea.ru</a></p>
+        <p><strong>Адрес:</strong> г. Москва, ул. Парковая, д. 1</p>
+        <button class="contact-button" type="button" onclick="document.getElementById('contactModal').showModal()">
+          Связаться с нами
+        </button>
+      </section>
+    </main>
 
-        <footer class="footer">
-            <p>Все права защищены</p>
-        </footer>
+    <footer class="footer">
+      <p class="footer__text">Все права защищены</p>
+    </footer>
+  </div>
+
+  <!-- Диалог с формой -->
+  <dialog id="contactModal">
+    <div class="modal-header">
+      <h2>Форма обратной связи</h2>
     </div>
 
-    <!-- Модальное окно для формы обратной связи -->
-    <dialog id="contactModal">
-        <div class="modal-header">
-            <h2>Форма обратной связи</h2>
+    <div class="modal-content">
+      <form id="feedbackForm" method="dialog" novalidate>
+        <div class="form-group">
+          <label for="name">Имя <span class="required">*</span></label>
+          <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
         </div>
 
-        <div class="modal-content">
-            <form id="feedbackForm" method="dialog" novalidate>
-                <div class="form-group">
-                    <label for="name">Имя <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
-                </div>
-
-                <div class="form-group">
-                    <label for="phone">Телефон <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX" inputmode="tel" pattern="^\\+?\\d[\\d\\s()\\-]{7,}$">
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Электронная почта <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
-                </div>
-
-                <div class="form-group">
-                    <label for="category">Категория обращения <span class="required">*</span></label>
-                    <select id="category" name="category" required>
-                        <option value="">Выберите категорию</option>
-                        <option value="technical">Техническая поддержка</option>
-                        <option value="commercial">Коммерческое предложение</option>
-                        <option value="cooperation">Сотрудничество</option>
-                        <option value="complaint">Жалоба</option>
-                        <option value="suggestion">Предложение</option>
-                        <option value="other">Другое</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Текст обращения <span class="required">*</span></label>
-                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
-                </div>
-
-                <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" onclick="contactModal.close()">Отмена</button>
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
-                </div>
-            </form>
+        <div class="form-group">
+          <label for="phone">Телефон <span class="required">*</span></label>
+          <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX" inputmode="tel" pattern="^\+?\d[\d\s()\-]{7,}$">
         </div>
-    </dialog>
 
-    <script>
-        // Ссылки на элементы
-        const contactModal = document.getElementById('contactModal');
-        const feedbackForm = document.getElementById('feedbackForm');
+        <div class="form-group">
+          <label for="email">Электронная почта <span class="required">*</span></label>
+          <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+        </div>
 
-        // Отправка формы
-        function submitForm() {
-            if (!feedbackForm.checkValidity()) {
-                feedbackForm.reportValidity();
-                return;
-            }
+        <div class="form-group">
+          <label for="category">Категория обращения <span class="required">*</span></label>
+          <select id="category" name="category" required>
+            <option value="">Выберите категорию</option>
+            <option value="technical">Техническая поддержка</option>
+            <option value="commercial">Коммерческое предложение</option>
+            <option value="cooperation">Сотрудничество</option>
+            <option value="complaint">Жалоба</option>
+            <option value="suggestion">Предложение</option>
+            <option value="other">Другое</option>
+          </select>
+        </div>
 
-            const formData = new FormData(feedbackForm);
-            const data = {
-                name: formData.get('name'),
-                phone: formData.get('phone'),
-                email: formData.get('email'),
-                category: formData.get('category'),
-                message: formData.get('message')
-            };
+        <div class="form-group">
+          <label for="message">Текст обращения <span class="required">*</span></label>
+          <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+        </div>
 
-            // Здесь могла бы быть отправка на сервер (fetch/AJAX)
-            console.log('Данные формы:', data);
+        <div class="modal-actions">
+          <button type="button" class="btn btn-secondary" data-action="close">Отмена</button>
+          <button type="button" class="btn btn-primary" data-action="submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+  </dialog>
 
-            alert('Спасибо! Ваше обращение отправлено. Мы свяжемся с вами в ближайшее время.');
-            contactModal.close();
-            feedbackForm.reset();
-        }
-
-        // Закрытие модального окна по клику на фон
-        contactModal.addEventListener('click', function (event) {
-            if (event.target === event.currentTarget) {
-                contactModal.close();
-            }
-        });
-
-        // Предотвращаем отправку по Enter (кроме textarea)
-        feedbackForm.addEventListener('keypress', function (event) {
-            if (event.key === 'Enter' && event.target.tagName.toLowerCase() !== 'textarea') {
-                event.preventDefault();
-            }
-        });
-    </script>
+  <script src="../scripts/theme.js" defer></script>
+  <script src="../scripts/contacts.js" defer></script>
 </body>
 </html>

@@ -1,56 +1,62 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
+<html lang="ру">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Новости - Семестровая работа</title>
     <link rel="stylesheet" href="../style/styles.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="page-container">
-        <header class="header">
-            <h1>Добро пожаловать на мой сайт</h1>
-        </header>
+      <header class="header">
+        <h1>Добро пожаловать на мой сайт</h1>
 
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-                <li class="nav-item"><a class="nav-link" href="news.html" aria-current="page">Новости</a></li>
-                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-            </ul>
-        </nav>
+        <button class="theme-switch" type="button" aria-pressed="false" title="Переключить тему">
+          <span class="theme-switch__icon" aria-hidden="true">🌓</span>
+          <span class="sr-only">Переключить тему</span>
+        </button>
+      </header>
 
-        <main class="content">
-            <h1>Новости</h1>
+      <nav class="nav">
+        <ul class="nav-list">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+          <li class="nav-item"><a class="nav-link" href="news.html" aria-current="page">Новости</a></li>
+          <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+          <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+          <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+        </ul>
+      </nav>
 
-            <article class="news-item">
-                <h2>Успешное завершение семестрового проекта</h2>
-                <p><strong>Дата публикации:</strong> 15.10.2025 | <strong>Автор:</strong> Шавров А.А.</p>
-                <p>Подвели итоги семестрового проекта по веб‑разработке. Студенты уверенно применили семантическую
-                вёрстку, Flex/Grid‑сетки и базовые принципы доступности. Лучшие работы будут разобраны на практиках и
-                опубликованы в методических материалах.</p>
-            </article>
+      <main class="content">
+        <h1>Новости</h1>
+        <article class="news-item">
+          <h2>Успешное завершение семестрового проекта</h2>
+          <p><strong>Дата публикации:</strong> 15.10.2025 | <strong>Автор:</strong> Шавров А.А.</p>
+          <p>Подвели итоги семестрового проекта по веб‑разработке. Студенты уверенно применили семантическ[...]
+          вёрстку, Flex/Grid‑сетки и базовые принципы доступности. Лучшие работы будут разобраны на практиках и
+          опубликованы в методических материалах.</p>
+        </article>
 
-            <article class="news-item">
-                <h2>Открытие курса по фронтенд‑фреймворкам</h2>
-                <p><strong>Дата публикации:</strong> 12.10.2025 | <strong>Автор:</strong> Сидоров М.К.</p>
-                <p>На следующей неделе стартует дополнительный курс по современным фронтенд‑фреймворкам. В программе:
-                компонентный подход, маршрутизация, работа с формами и управление состоянием.</p>
-            </article>
+        <article class="news-item">
+          <h2>Открытие курса по фронтенд‑фреймворкам</h2>
+          <p><strong>Дата публикации:</strong> 12.10.2025 | <strong>Автор:</strong> Сидоров М.К.</p>
+          <p>На следующей неделе стартует дополнительный курс по современным фронтенд‑фреймворкам. В прогр�[...]
+          компонентный подход, маршрутизация, работа с формами и управление состоянием.</p>
+        </article>
 
-            <article class="news-item">
-                <h2>Вебинар от специалистов Яндекса</h2>
-                <p><strong>Дата публикации:</strong> 08.10.2025 | <strong>Автор:</strong> Козлова Е.В.</p>
-                <p>22 октября пройдёт онлайн‑вебинар «Тренды веб‑разработки»: обсудим Lighthouse‑метрики, оптимизацию
-                производительности и практики сборки фронтенда.</p>
-            </article>
-        </main>
+        <article class="news-item">
+          <h2>Вебинар от специалистов Яндекса</h2>
+          <p><strong>Дата публикации:</strong> 08.10.2025 | <strong>Автор:</strong> Козлова Е.В.</p>
+          <p>22 октября пройдёт онлайн‑вебинар «Тренды веб‑разработки»: обсудим Lighthouse‑метрики, оптимизацию
+          производительности и практики сборки фронтенда.</p>
+        </article>
+      </main>
 
-        <footer class="footer">
-            <p>Все права защищены</p>
-        </footer>
+      <footer class="footer">
+        <p>Все права защищены</p>
+      </footer>
     </div>
-</body>
+
+    <script src="../scripts/theme.js" defer></script>
+  </body>
 </html>
