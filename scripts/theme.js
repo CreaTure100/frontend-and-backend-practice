@@ -1,9 +1,9 @@
+
 (function () {
   const root = document.documentElement;
   const btn = document.querySelector('.theme-switch');
   const KEY = 'theme';
 
-  // Инициализация: localStorage → система → светлая
   const saved = localStorage.getItem(KEY);
   const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
   const startDark = saved ? saved === 'dark' : prefersDark;

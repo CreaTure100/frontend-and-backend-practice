@@ -1,114 +1,225 @@
 <!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Товары - Семестровая работа</title>
-  <link rel="stylesheet" href="../style/styles.css">
-</head>
-<body>
-  <div class="page">
-    <header class="header">
-      <h1 class="header__title">Добро пожаловать на мой сайт</h1>
-      <button class="theme-switch" type="button" aria-pressed="false" title="Переключить тему">
-        <span class="theme-switch__icon" aria-hidden="true">🌓</span>
-        <span class="sr-only">Переключить тему</span>
-      </button>
-    </header>
+<html lang="ру" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Товары — Каталог</title>
 
-    <nav class="nav">
-      <ul class="nav__list">
-        <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
-        <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-        <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
-        <li class="nav__item nav__item--active"><a class="nav__link" href="goods.html" aria-current="page">Товары</a></li>
-        <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
-      </ul>
-    </nav>
+    <!-- Bootstrap CSS + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
+  </head>
+  <body class="bg-body-tertiary">
+    <div class="container-fluid p-0">
+      <!-- Header -->
+      <header class="bg-primary text-white py-4">
+        <div class="container">
+          <div class="row align-items-center g-3">
+            <div class="col">
+              <h1 class="h3 mb-1">Каталог товаров</h1>
+              <p class="mb-0 opacity-75">Подборка мини‑персонажей</p>
+            </div>
+          </div>
+        </div>
+      </header>
 
-    <main class="main">
-      <h1>Каталог товаров</h1>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+          <a class="navbar-brand d-lg-none" href="#">Навигация</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-      <!-- множественный выбор по умолчанию; для одиночного поставьте data-selection="single" -->
-      <div class="products-container" data-selectable="cards" data-selection="multiple" role="listbox" aria-multiselectable="true">
-        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
-          <img class="card__image" src="../images/Mini_P.E.K.K.A.webp" alt="минипекка">
-          <h3 class="product-card__title card__title">Mini P.E.K.K.A</h3>
-          <p class="product-price card__price" aria-label="Цена: 3 эликсира">
-            <span class="card__price-new">3 <span class="elixir-icon" aria-hidden="true"></span></span>
-          </p>
-        </article>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto gap-lg-2">
+              <li class="nav-item"><a class="nav-link" href="../index.html"><i class="bi bi-house me-1"></i>Главная</a></li>
+              <li class="nav-item"><a class="nav-link" href="news.html"><i class="bi bi-newspaper me-1"></i>Новости</a></li>
+              <li class="nav-item"><a class="nav-link" href="practices.html"><i class="bi bi-code-slash me-1"></i>Практики</a></li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="goods.html"><i class="bi bi-cart me-1"></i>Товары</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+            </ul>
 
-        <!-- СО СКИДКОЙ -->
-        <article class="product-card card card--hoverable card--discount" role="option" tabindex="0" aria-selected="false">
-          <span class="card__badge" aria-label="Скидка">Скидка</span>
-          <img class="card__image" src="../images/Magic_archer.webp" alt="магический лучник">
-          <h3 class="product-card__title card__title">Magic archer</h3>
-          <p class="product-price card__price" aria-label="Цена: 4 эликсира, скидка с 5">
-            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
-            <span class="card__price-old" aria-hidden="true">5</span>
-          </p>
-        </article>
+            <!-- Theme toggle -->
+            <div class="d-flex">
+              <button id="themeToggle" class="btn btn-outline-light btn-sm" type="button" aria-pressed="false" title="Переключить тему">
+                <i class="bi bi-moon-stars me-1"></i><span class="d-none d-sm-inline">Тема</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
-          <img class="card__image" src="../images/Swordman.webp" alt="мечник">
-          <h3 class="product-card__title card__title">Swordman</h3>
-          <p class="product-price card__price" aria-label="Цена: 3 эликсира">
-            <span class="card__price-new">3 <span class="elixir-icon" aria-hidden="true"></span></span>
-          </p>
-        </article>
+      <!-- Main -->
+      <main class="container my-4">
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm">
+              <img src="../images/Mini_P.E.K.K.A.webp" class="card-img-top" alt="Mini P.E.K.K.A" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Mini P.E.K.K.A</h5>
+                <p class="card-text fw-semibold text-primary mb-4">
+                  Цена: 3
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Mini P.E.K.K.A в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
 
-        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
-          <img class="card__image" src="../images/Bowler.webp" alt="вышибала">
-          <h3 class="product-card__title card__title">Bowler</h3>
-          <p class="product-price card__price" aria-label="Цена: 3 эликсира">
-            <span class="card__price-new">3 <span class="elixir-icon" aria-hidden="true"></span></span>
-          </p>
-        </article>
+          <!-- Card 2 (discount) -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm position-relative">
+              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Скидка</span>
+              <img src="../images/Magic_archer.webp" class="card-img-top" alt="Magic archer" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Magic archer</h5>
+                <p class="card-text fw-semibold mb-4">
+                  <span class="text-primary">Цена: 4</span>
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                  <span class="text-muted text-decoration-line-through ms-2">5</span>
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Magic archer в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
 
-        <!-- СО СКИДКОЙ -->
-        <article class="product-card card card--hoverable card--discount" role="option" tabindex="0" aria-selected="false">
-          <span class="card__badge" aria-label="Скидка">Скидка</span>
-          <img class="card__image" src="../images/bandit.png" alt="бандитка">
-          <h3 class="product-card__title card__title">Bandit</h3>
-          <p class="product-price card__price" aria-label="Цена: 4 эликсира, скидка с 5">
-            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
-            <span class="card__price-old" aria-hidden="true">5</span>
-          </p>
-        </article>
+          <!-- Card 3 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm">
+              <img src="../images/Swordman.webp" class="card-img-top" alt="Swordman" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Swordman</h5>
+                <p class="card-text fw-semibold text-primary mb-4">
+                  Цена: 3
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Swordman в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
 
-        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
-          <img class="card__image" src="../images/battle_boxer.png" alt="боевой боксер">
-          <h3 class="product-card__title card__title">Battle Boxer</h3>
-          <p class="product-price card__price" aria-label="Цена: 5 эликсира">
-            <span class="card__price-new">5 <span class="elixir-icon" aria-hidden="true"></span></span>
-          </p>
-        </article>
+          <!-- Card 4 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm">
+              <img src="../images/Bowler.webp" class="card-img-top" alt="Bowler" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Bowler</h5>
+                <p class="card-text fw-semibold text-primary mb-4">
+                  Цена: 3
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Bowler в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
 
-        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
-          <img class="card__image" src="../images/royal_ghost.png" alt="королевский призрак">
-          <h3 class="product-card__title card__title">Royal Ghost</h3>
-          <p class="product-price card__price" aria-label="Цена: 4 эликсира">
-            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
-          </p>
-        </article>
+          <!-- Card 5 (discount) -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm position-relative">
+              <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-2">Скидка</span>
+              <img src="../images/bandit.png" class="card-img-top" alt="Bandit" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Bandit</h5>
+                <p class="card-text fw-semibold mb-4">
+                  <span class="text-primary">Цена: 4</span>
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                  <span class="text-muted text-decoration-line-through ms-2">5</span>
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Bandit в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
 
-        <article class="product-card card card--hoverable" role="option" tabindex="0" aria-selected="false">
-          <img class="card__image" src="../images/natureborn.png" alt="дриада">
-          <h3 class="product-card__title card__title">Natureborn</h3>
-          <p class="product-price card__price" aria-label="Цена: 4 эликсира">
-            <span class="card__price-new">4 <span class="elixir-icon" aria-hidden="true"></span></span>
-          </p>
-        </article>
-      </div>
-    </main>
+          <!-- Card 6 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm">
+              <img src="../images/battle_boxer.png" class="card-img-top" alt="Battle Boxer" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Battle Boxer</h5>
+                <p class="card-text fw-semibold text-primary mb-4">
+                  Цена: 5
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Battle Boxer в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
 
-    <footer class="footer">
-      <p class="footer__text">Все права защищены</p>
-    </footer>
-  </div>
+          <!-- Card 7 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm">
+              <img src="../images/royal_ghost.png" class="card-img-top" alt="Royal Ghost" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Royal Ghost</h5>
+                <p class="card-text fw-semibold text-primary mb-4">
+                  Цена: 4
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Royal Ghost в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
 
-  <script src="../scripts/theme.js" defer></script>
-  <script src="../scripts/cards.js" defer></script>
-</body>
+          <!-- Card 8 -->
+          <div class="col-12 col-sm-6 col-lg-4 col-xl-3">
+            <div class="card h-100 shadow-sm">
+              <img src="../images/natureborn.png" class="card-img-top" alt="Natureborn" style="height:180px;object-fit:cover;">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Natureborn</h5>
+                <p class="card-text fw-semibold text-primary mb-4">
+                  Цена: 4
+                  <img src="../images/Elixir.webp" alt="" width="18" height="18" style="vertical-align:-3px;">
+                </p>
+                <a href="#" class="btn btn-primary mt-auto" aria-label="Добавить Natureborn в корзину">В корзину</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <!-- Footer -->
+      <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="mb-0">&copy; 2024 Портфолио студента. Все права защищены.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <a class="text-white text-decoration-none me-3" href="contacts.html">Контакты</a>
+              <a class="text-white text-decoration-none" href="#">Политика конфиденциальности</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap theme toggle -->
+    <script>
+      (function () {
+        const KEY = 'bs-theme';
+        const btn = document.getElementById('themeToggle');
+        const saved = localStorage.getItem(KEY);
+        if (saved) document.documentElement.setAttribute('data-bs-theme', saved);
+        function apply(next) {
+          document.documentElement.setAttribute('data-bs-theme', next);
+          localStorage.setItem(KEY, next);
+          if (btn) btn.setAttribute('aria-pressed', String(next === 'dark'));
+        }
+        if (btn) {
+          btn.addEventListener('click', () => {
+            const cur = document.documentElement.getAttribute('data-bs-theme') || 'light';
+            apply(cur === 'light' ? 'dark' : 'light');
+          });
+          btn.setAttribute('aria-pressed', String((saved || 'light') === 'dark'));
+        }
+      })();
+    </script>
+  </body>
 </html>
