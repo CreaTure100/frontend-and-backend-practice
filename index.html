@@ -1,87 +1,310 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-bs-theme="light">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
-    <link rel="stylesheet" href="style/styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Главная — Портфолио</title>
+
+    <!-- Bootstrap CSS + Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet" />
   </head>
-  <body>
-    <div class="page">
-      <header class="header">
-        <h1 class="header__title">Добро пожаловать на мой сайт</h1>
-        <button class="theme-switch" type="button" aria-pressed="false" title="Переключить тему">
-          <span class="theme-switch__icon" aria-hidden="true">🌓</span>
-          <span class="sr-only">Переключить тему</span>
-        </button>
+  <body class="bg-body-tertiary">
+    <div class="container-fluid p-0">
+      <!-- Header -->
+      <header class="bg-primary text-white py-4">
+        <div class="container">
+          <div class="row align-items-center g-3">
+            <div class="col">
+              <h1 class="h3 mb-1">Мой Портфолио</h1>
+              <p class="mb-0 opacity-75">Студент‑разработчик</p>
+            </div>
+            <div class="col-auto d-flex align-items-center gap-2">
+              <span class="badge bg-light text-primary">ЭФБО-02-24</span>
+            </div>
+          </div>
+        </div>
       </header>
 
-      <nav class="nav" aria-label="Основная навигация">
-        <ul class="nav__list">
-          <li class="nav__item nav__item--active"><a class="nav__link" href="index.html" aria-current="page">Главная</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/news.html">Новости</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/practices.html">Практики</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/goods.html">Товары</a></li>
-          <li class="nav__item"><a class="nav__link" href="pages/contacts.html">Контакты</a></li>
-        </ul>
+      <!-- Navbar -->
+      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <div class="container">
+          <a class="navbar-brand d-lg-none" href="#">Навигация</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto gap-lg-2">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">
+                  <i class="bi bi-house me-1"></i>Главная
+                </a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="pages/news.html"><i class="bi bi-newspaper me-1"></i>Новости</a></li>
+              <li class="nav-item"><a class="nav-link" href="pages/practices.html"><i class="bi bi-code-slash me-1"></i>Практики</a></li>
+              <li class="nav-item"><a class="nav-link" href="pages/goods.html"><i class="bi bi-cart me-1"></i>Товары</a></li>
+              <li class="nav-item"><a class="nav-link" href="pages/contacts.html"><i class="bi bi-telephone me-1"></i>Контакты</a></li>
+            </ul>
+
+            <!-- Theme switch (Bootstrap 5.3) -->
+            <div class="d-flex">
+              <button id="themeToggle" class="btn btn-outline-light btn-sm" type="button" aria-pressed="false" title="Переключить тему">
+                <i class="bi bi-moon-stars me-1"></i><span class="d-none d-sm-inline">Тема</span>
+              </button>
+            </div>
+          </div>
+        </div>
       </nav>
 
-      <main class="main">
-        <article class="profile-header">
-          <h1 class="profile-title">Информация об авторе</h1>
-          <img class="profile-photo" src="images/photo_ava.jpg" alt="Фото автора">
-          <h2 class="profile-name">Шавров Артём Александрович</h2>
-          <p class="profile-group">ЭФБО-02-24</p>
-        </article>
+      <!-- Main -->
+      <main class="container my-4">
 
-        <section class="about-me">
-          <h2>Обо мне</h2>
-          <p>Обо мне: Меня зовут Вито Скалетта. Я родился на Сицилии, в 25-м году. Этот малыш — я. Стою с родителями и сестрой Франческой, у нашего старого дома. Я мало что помню о тех временах, разве что жизнь была тяжёлой, а потом отец решил, что нам пора уезжать. Покинуть Сицилию. Пересечь океан и начать новую жизнь в Америке. Никогда в жизни я не видел ничего подобного Эмпайр-Бэй. Он был прекрасен. Впрочем, трудно представить нечто более скверное и отвратительное, чем наша новая конура. «Американская мечта»… Скорее уж кошмар. Отец стал работать в порту на человека, который перевёз нас сюда. Он работал как проклятый, зарабатывал гроши и почти всё спускал в кабаке. Со временем меня отдали в школу. Мне нужен был английский, но чёрта с два я бы заговорил на нём с итальянцами. Там я и встретил Джо. Постепенно мы стали лучшими друзьями. У обоих свистело в кармане, а пристойной работы не было — и мы затеяли своё скромное дело. Что ж, тогда нам не повезло. На дворе стоял 43-й год. Шла война, и для высадки на Сицилии нужны были солдаты, говорящие по-итальянски. Мне было восемнадцать, и в тюрьму я не хотел. Кто сказал, что нельзя вернуться на Родину?..</p> 
-
-        </section>
-
-        <section class="section section--skills" aria-labelledby="skills-title">
-          <header class="section__header">
-            <h2 id="skills-title" class="section__title">Мои навыки</h2>
-          </header>
-          <div class="section__body">
-            <ul class="skills-list" role="list">
-              <li class="skill-tag">Разработка на C#</li>
-              <li class="skill-tag">Алгоритмы и структуры данных</li>
-              <li class="skill-tag">База данных SQL</li>
-              <li class="skill-tag">ООП и паттерны проектирования</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- Мой опыт -->
-        <section class="section section--experience" aria-labelledby="exp-title">
-          <header class="section__header">
-            <h2 id="exp-title" class="section__title">Мой опыт</h2>
-          </header>
-          <div class="section__body">
-            <div class="experience-grid">
-              <article class="experience-card">
-                <h3 class="experience-title">Младший разработчик</h3>
-                <p class="experience-desc">Работал в команде над корпоративной CRM: дорабатывал модули, оптимизировал запросы к БД и участвовал в код‑ревью.</p>
-              </article>
-              <article class="experience-card">
-                <h3 class="experience-title">Стажёр-программист</h3>
-                <p class="experience-desc">Разрабатывал десктопные утилиты для автоматизации процессов, писал тесты и настраивал CI для сборок.</p>
-              </article>
-              <article class="experience-card">
-                <h3 class="experience-title">Фрилансер</h3>
-                <p class="experience-desc">Собрал несколько веб‑приложений на ASP.NET Core, наладил деплой, логи и мониторинг, общался с заказчиками и защищал решения.</p>
-              </article>
+        <!-- Profile -->
+        <section class="mb-5">
+          <div class="card shadow-sm">
+            <div class="card-body p-4">
+              <div class="row align-items-center">
+                <div class="col-md-3 text-center mb-3 mb-md-0">
+                  <img src="images/photo_ava.jpg" alt="Фото студента" class="img-fluid rounded-circle"
+                       style="width:150px;height:150px;object-fit:cover;">
+                </div>
+                <div class="col-md-9">
+                  <h2 class="card-title h4 text-primary mb-2">Шавров Артём Александрович</h2>
+                  <p class="card-text text-muted mb-3">
+                    <i class="bi bi-bookmark-check-fill text-primary me-1"></i>Студент группы ЭФБО-02-24
+                  </p>
+                  <p class="mb-3">ИПТИП, направление «Фуллстек‑разработчик»</p>
+                  <div class="d-flex gap-2 flex-wrap">
+                    <span class="badge bg-primary">HTML/CSS</span>
+                    <span class="badge bg-success">JavaScript</span>
+                    <span class="badge bg-info">Bootstrap</span>
+                    <span class="badge bg-warning text-dark">React</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
+
+        <!-- About -->
+        <section class="mb-5">
+          <div class="card shadow-sm">
+            <!-- FIX: адаптивный фон + контрастный текст -->
+            <div class="card-header bg-body-secondary">
+              <h3 class="h5 mb-0 text-body-emphasis">
+                <i class="bi bi-person-circle text-primary me-1"></i>Обо мне
+              </h3>
+            </div>
+            <div class="card-body">
+              <p class="mb-3">
+                Обо мне: Меня зовут Вито Скалетта. Я родился на Сицилии, в 25‑м году. Этот малыш — я. Стою с родителями и сестрой Франческой, у нашего старого дома. Я мало что помню о тех временах, разве что жизнь была тяжёлой, а потом отец решил, что нам пора уезжать. Покинуть Сицилию. Пересечь океан и начать новую жизнь в Америке. Никогда в жизни я не видел ничего подобного Эмпайр‑Бэй. Он был прекрасен.
+              </p>
+              <p class="mb-3">
+                Впрочем, трудно представить нечто более скверное и отвратительное, чем наша новая конура. «Американская мечта»… Скорее уж кошмар. Отец стал работать в порту на человека, который перевёз нас сюда. Он работал как проклятый, зарабатывал гроши и почти всё спускал в кабаке. Со временем меня отдали в школу. Мне нужен был английский, но чёрта с два я бы заговорил на нём с итальянцами. Там я и встретил Джо. Постепенно мы стали лучшими друзьями. У обоих свистело в кармане, а пристойной работы не было — и мы затеяли своё скромное дело.
+              </p>
+              <p class="mb-0">
+                Что ж, тогда нам не повезло. На дворе стоял 43‑й год. Шла война, и для высадки на Сицилии нужны были солдаты, говорящие по‑итальянски. Мне было восемнадцать, и в тюрьму я не хотел. Кто сказал, что нельзя вернуться на Родину?..
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Skills (progress) -->
+        <section class="mb-5">
+          <div class="card shadow-sm">
+            <!-- FIX: адаптивный фон + контрастный текст -->
+            <div class="card-header bg-body-secondary">
+              <h3 class="h5 mb-0 text-body-emphasis"><i class="bi bi-tools text-primary me-1"></i>Мои навыки</h3>
+            </div>
+            <div class="card-body">
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="mb-2 d-flex justify-content-between"><span>HTML/CSS</span><span class="text-primary">90%</span></div>
+                  <div class="progress" style="height:8px;"><div class="progress-bar bg-primary" style="width:90%"></div></div>
+
+                  <div class="mt-3 mb-2 d-flex justify-content-between"><span>JavaScript</span><span class="text-primary">75%</span></div>
+                  <div class="progress" style="height:8px;"><div class="progress-bar bg-success" style="width:75%"></div></div>
+                </div>
+                <div class="col-md-6">
+                  <div class="mb-2 d-flex justify-content-between"><span>Bootstrap</span><span class="text-primary">85%</span></div>
+                  <div class="progress" style="height:8px;"><div class="progress-bar bg-info" style="width:85%"></div></div>
+
+                  <div class="mt-3 mb-2 d-flex justify-content-between"><span>React</span><span class="text-primary">70%</span></div>
+                  <div class="progress" style="height:8px;"><div class="progress-bar bg-warning" style="width:70%"></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Experience -->
+        <section class="mb-5">
+          <div class="card shadow-sm">
+            <!-- FIX: адаптивный фон + контрастный текст -->
+            <div class="card-header bg-body-secondary">
+              <h3 class="h5 mb-0 text-body-emphasis"><i class="bi bi-briefcase-fill text-primary me-1"></i>Мой опыт</h3>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body border-start border-3 border-primary">
+                      <h5 class="card-title mb-2">Младший разработчик</h5>
+                      <p class="card-text text-muted mb-0">
+                        Работал в команде над корпоративной CRM: дорабатывал модули, оптимизировал запросы к БД и участвовал в код‑ревью.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body border-start border-3 border-primary">
+                      <h5 class="card-title mb-2">Стажёр‑программист</h5>
+                      <p class="card-text text-muted mb-0">
+                        Разрабатывал десктопные утилиты для автоматизации процессов, писал тесты и настраивал CI для сборок.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body border-start border-3 border-primary">
+                      <h5 class="card-title mb-2">Фрилансер</h5>
+                      <p class="card-text text-muted mb-0">
+                        Собрал несколько веб‑приложений на ASP.NET Core, наладил деплой, логи и мониторинг, общался с заказчиками и защищал решения.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects: 1) визитка, 2) BD_biblioteka_02, 3) магазин -->
+        <section class="mb-5">
+          <div class="card shadow-sm">
+            <!-- FIX: адаптивный фон + контрастный текст -->
+            <div class="card-header bg-body-secondary">
+              <h3 class="h5 mb-0 text-body-emphasis"><i class="bi bi-folder-fill text-primary me-1"></i>Мои проекты</h3>
+            </div>
+            <div class="card-body">
+              <div class="row g-3">
+                <!-- Проект 1: Визитка (этот сайт) -->
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card h-100">
+                    <img src="images/vizitka.png" class="card-img-top" alt="Визитка разработчика" style="height:150px;object-fit:cover;">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">Визитка разработчика</h5>
+                      <p class="card-text small text-muted">
+                        Сайт‑портфолио: тёмная/светлая тема, BEM/Bootstrap, доступность, карточки, модалка контактов.
+                      </p>
+                      <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-primary">HTML</span>
+                        <span class="badge bg-primary">CSS</span>
+                        <span class="badge bg-success">JavaScript</span>
+                        <span class="badge bg-info">Bootstrap</span>
+                      </div>
+                      <div class="mt-auto d-flex gap-2">
+                        <a href="index.html" class="btn btn-outline-primary btn-sm">Демо</a>
+                        <a href="https://github.com/CreaTure100/frontend-and-backend-practice" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">GitHub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Проект 2: BD_biblioteka_02 -->
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card h-100">
+                    <img src="images/BD.png" class="card-img-top" alt="BD_biblioteka_02 — приложение для библиотеки" style="height:150px;object-fit:cover;">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">BD_biblioteka_02</h5>
+                      <p class="card-text small text-muted">
+                        Приложение на python для учёт книг, авторов и читателей. Работа с базой данных.
+                      </p>
+                      <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-secondary">Python</span>
+                        <span class="badge bg-secondary">SQL</span>
+                        <span class="badge bg-secondary">Desktop</span>
+                      </div>
+                      <div class="mt-auto d-flex gap-2">
+                        <a href="https://github.com/CreaTure100/BD_biblioteka_02" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">GitHub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Проект 3: Магазин (страница «Товары») -->
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card h-100">
+                    <img src="images/cards.png" class="card-img-top" alt="Магазин — каталог товаров" style="height:150px;object-fit:cover;">
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">Магазин (каталог)</h5>
+                      <p class="card-text small text-muted">
+                        Карточки товаров, скидки, выбор карточек, доступность и клавиатурная навигация.
+                      </p>
+                      <div class="d-flex flex-wrap gap-2 mb-3">
+                        <span class="badge bg-primary">HTML</span>
+                        <span class="badge bg-primary">CSS</span>
+                        <span class="badge bg-success">JavaScript</span>
+                      </div>
+                      <div class="mt-auto d-flex gap-2">
+                        <a href="pages/goods.html" class="btn btn-outline-primary btn-sm">Демо</a>
+                        <a href="https://github.com/CreaTure100/frontend-and-backend-practice" target="_blank" rel="noopener" class="btn btn-outline-secondary btn-sm">GitHub</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>  
+            </div>
+          </div>
+        </section>
+
       </main>
 
-      <footer class="footer">
-        <p class="footer__text">Все права защищены</p>
+      <!-- Footer -->
+      <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <p class="mb-0">&copy; 2024 Портфолио студента. Все права защищены.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <a class="text-white text-decoration-none me-3" href="pages/contacts.html">Контакты</a>
+              <a class="text-white text-decoration-none" href="#">Политика конфиденциальности</a>
+            </div>
+          </div>
+        </div>
       </footer>
     </div>
-    <script src="scripts/theme.js" defer></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Bootstrap theme toggle (persists in localStorage) -->
+    <script>
+      (function () {
+        const KEY = 'bs-theme';
+        const btn = document.getElementById('themeToggle');
+        const saved = localStorage.getItem(KEY);
+        if (saved) document.documentElement.setAttribute('data-bs-theme', saved);
+
+        function apply(next) {
+          document.documentElement.setAttribute('data-bs-theme', next);
+          localStorage.setItem(KEY, next);
+          if (btn) btn.setAttribute('aria-pressed', String(next === 'dark'));
+        }
+
+        if (btn) {
+          btn.addEventListener('click', () => {
+            const cur = document.documentElement.getAttribute('data-bs-theme') || 'light';
+            apply(cur === 'light' ? 'dark' : 'light');
+          });
+          btn.setAttribute('aria-pressed', String((saved || 'light') === 'dark'));
+        }
+      })();
+    </script>
   </body>
 </html>
